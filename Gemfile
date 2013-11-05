@@ -13,6 +13,10 @@ gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'mail'
+gem 'selenium-webdriver'
+gem 'phantomjs'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
@@ -20,4 +24,6 @@ group :development do
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'awesome_print'
+  gem 'pry'
 end

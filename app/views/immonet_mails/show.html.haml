@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Body:
+  = @immonet_mail.body
+%p
+  %b Subject:
+  = @immonet_mail.subject
+%p
+  %b Headers:
+  = @immonet_mail.headers
+%p
+  %b Raw:
+  = @immonet_mail.raw
+
+= link_to 'Edit', edit_immonet_mail_path(@immonet_mail)
+\|
+= link_to 'Back', immonet_mails_path

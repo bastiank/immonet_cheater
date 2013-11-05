@@ -1,0 +1,2 @@
+module ImmonetLinksHelper
+end

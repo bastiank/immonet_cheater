@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Immonet mail:
+  = @immonet_link.immonet_mail
+%p
+  %b Object:
+  = @immonet_link.object_id
+%p
+  %b Link:
+  = @immonet_link.link
+%p
+  %b Status:
+  = @immonet_link.status
+
+= link_to 'Edit', edit_immonet_link_path(@immonet_link)
+\|
+= link_to 'Back', immonet_links_path

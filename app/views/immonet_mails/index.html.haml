@@ -1,0 +1,25 @@
+%h1 Listing immonet_mails
+
+%table
+  %tr
+    %th Body
+    %th Subject
+    %th Headers
+    %th Raw
+    %th
+    %th
+    %th
+
+  - @immonet_mails.each do |immonet_mail|
+    %tr
+      %td= immonet_mail.body
+      %td= immonet_mail.subject
+      %td= immonet_mail.headers
+      %td= immonet_mail.raw
+      %td= link_to 'Show', immonet_mail
+      %td= link_to 'Edit', edit_immonet_mail_path(immonet_mail)
+      %td= link_to 'Destroy', immonet_mail, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Immonet mail', new_immonet_mail_path

@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    awesome_print (1.2.0)
     bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
@@ -36,6 +37,8 @@ GEM
     bootstrap-sass (3.0.0.0)
       sass (~> 3.2)
     builder (3.1.4)
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -53,6 +56,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    ffi (1.9.0)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
@@ -82,11 +86,18 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.2)
     orm_adapter (0.4.0)
+    phantomjs (1.9.2.0)
     polyglot (0.3.3)
+    pry (0.9.6)
+      coderay (>= 0.9.8)
+      method_source (>= 0.6.5)
+      ruby_parser (>= 2.0.5)
+      slop (~> 2.1.0)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -109,15 +120,22 @@ GEM
     rake (10.1.0)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
+    rubyzip (1.0.0)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    selenium-webdriver (2.37.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0.0)
+      websocket (~> 1.0.4)
     sexp_processor (4.4.0)
     simple_form (3.0.0)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
+    slop (2.1.0)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -143,11 +161,13 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket (1.0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   better_errors
   binding_of_caller
   bootstrap-sass (>= 3.0.0.0)
@@ -159,10 +179,14 @@ DEPENDENCIES
   hub
   jbuilder (~> 1.2)
   jquery-rails
+  mail
+  phantomjs
+  pry
   quiet_assets
   rails (= 4.0.0)
   rails_layout
   sass-rails (~> 4.0.0)
+  selenium-webdriver
   simple_form
   sqlite3
   turbolinks

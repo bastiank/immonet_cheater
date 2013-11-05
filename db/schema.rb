@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131103174603) do
+ActiveRecord::Schema.define(version: 20131104224059) do
+
+  create_table "immonet_links", force: true do |t|
+    t.integer  "immonet_mail_id"
+    t.integer  "immonet_id"
+    t.text     "link"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "error_message"
+    t.integer  "retry_count"
+  end
+
+  add_index "immonet_links", ["immonet_mail_id"], name: "index_immonet_links_on_immonet_mail_id"
+
+  create_table "immonet_mails", force: true do |t|
+    t.string   "body"
+    t.string   "subject"
+    t.text     "headers"
+    t.text     "raw"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

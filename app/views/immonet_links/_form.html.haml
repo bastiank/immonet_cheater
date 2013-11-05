@@ -1,0 +1,11 @@
+= simple_form_for(@immonet_link) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :immonet_mail
+    = f.input :object_id
+    = f.input :link
+    = f.input :status
+
+  .form-actions
+    = f.button :submit

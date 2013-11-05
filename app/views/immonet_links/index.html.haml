@@ -1,0 +1,25 @@
+%h1 Listing immonet_links
+
+%table
+  %tr
+    %th Immonet mail
+    %th Object
+    %th Link
+    %th Status
+    %th
+    %th
+    %th
+
+  - @immonet_links.each do |immonet_link|
+    %tr
+      %td= immonet_link.immonet_mail
+      %td= immonet_link.object_id
+      %td= immonet_link.link
+      %td= immonet_link.status
+      %td= link_to 'Show', immonet_link
+      %td= link_to 'Edit', edit_immonet_link_path(immonet_link)
+      %td= link_to 'Destroy', immonet_link, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Immonet link', new_immonet_link_path

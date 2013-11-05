@@ -1,0 +1,11 @@
+= simple_form_for(@immonet_mail) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :body
+    = f.input :subject
+    = f.input :headers
+    = f.input :raw
+
+  .form-actions
+    = f.button :submit
