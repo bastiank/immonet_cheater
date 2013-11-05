@@ -11,8 +11,8 @@ class ImmonetLink < ActiveRecord::Base
   def contact
     self.increment! :retry_count
     begin
-      #driver = Selenium::WebDriver.for :phantomjs
-      driver = Selenium::WebDriver.for :firefox
+      driver = Selenium::WebDriver.for :phantomjs
+      #driver = Selenium::WebDriver.for :firefox
       driver.manage.timeouts.implicit_wait = 10
 
       driver.navigate.to link
@@ -41,7 +41,10 @@ class ImmonetLink < ActiveRecord::Base
       end
       driver.find_element(css: '#bc_perambulation').click
       driver.save_screenshot Rails.root.join('public','screenshots',"#{self.id}-#{self.immonet_id}-#{self.retry_count}-form.png")
+      driver.find_element(css: 'button#sendLongContactForm').click
+
       self.update status: 'contacted'
+      driver.save_screenshot Rails.root.join('public','screenshots',"#{self.id}-#{self.immonet_id}-#{self.retry_count}-send.png")
     rescue Exception=>e
       return if not_found_error(driver)
       Rails.logger.error e.to_s
@@ -69,7 +72,7 @@ class ImmonetLink < ActiveRecord::Base
       'bc_annotations' => <<eos
 Guten Tag,
 
-ihr Angebot klingt sehr zu uns passend, daher würden wir gerne zeitnah einen Termin für eine Besichtigung vereinbaren. Wir können am Wochenende und wochentags ab 17 Uhr.
+ihr Angebot klingt sehr zu uns passend, daher würden wir gerne zeitnah einen Termin für eine Besichtigung vereinbaren. Wir können am Wochenende und wochentags ab 17:30 Uhr.
 
 Wir sind ein Akademiker-Pärchen (beide 31 Jahre alt) mit unbefristeten Jobs in Hamburg. Wir sind Nichtraucher und haben keine Haustiere. 
 

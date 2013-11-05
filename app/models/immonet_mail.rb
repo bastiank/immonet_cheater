@@ -44,7 +44,7 @@ class ImmonetMail < ActiveRecord::Base
       end
 
       immonet_mail = create(data)
-      #immonet_mail.immonet_links.where(status: nil).each(&:contact)
+      immonet_mail.immonet_links.where(status: nil).each(&:contact)
     end
   end
 end
