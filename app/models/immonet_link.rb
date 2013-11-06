@@ -70,13 +70,14 @@ class ImmonetLink < ActiveRecord::Base
       'bc_email' => "bastian@kriesten.net",
       'bc_phone' => "0160 / 90151218",
       'bc_annotations' => <<eos
+
 Guten Tag,
 
 ihr Angebot klingt sehr zu uns passend, daher würden wir gerne zeitnah einen Termin für eine Besichtigung vereinbaren. Wir können am Wochenende und wochentags ab 17:30 Uhr.
 
-Wir sind ein Akademiker-Pärchen (beide 31 Jahre alt) mit unbefristeten Jobs in Hamburg. Wir sind Nichtraucher und haben keine Haustiere. 
+Wir sind ein Akademiker-Pärchen (beide 31 Jahre alt) mit unbefristeten Jobs in Hamburg. Wir haben keine Haustiere. Wir sind Nichtraucher und suchen eine Nichtraucherwohnung.
 
-Ich arbeite als Software-Entwickler in der Internetbranche (http:/www.jimdo.de) und meine Partnerin ist in der Unternehmensberatung als Projektleiterin tätig (http://www.beone-hamburg.com/). 
+Ich arbeite als Software-Entwickler in der Internetbranche (http:/www.jimdo.de) und meine Partnerin ist in der Unternehmensberatung als Projektleiterin tätig (http://www.beone-hamburg.com/).
 Eine kleine Selbstauskunft finden Sie unter http://kriesten.net/Selbstauskunft_Kriesten_Peters.pdf.
 
 Wir freuen uns über eine zeitnahe Antwort.
@@ -89,7 +90,6 @@ Annika Peters (Dr.-Ing.)
 
 Kontakt:
 Bastian Kriesten
-Handy: 016090151218
 Mail: bastian@kriesten.net
 
 Professor-Brix-Weg 7
